@@ -32,7 +32,7 @@ public class Main
         else System.out.printf("Test case %s failed :(%n",testCase);
     }
     
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 	    //Test case 1 = success.
 	    Input input1 = new Input(Arrays.asList(10,15,3,7),7);
 	    dcp_1_test(input1,true,1);
@@ -45,6 +45,6 @@ public class Main
 	    //Test case 4 = null input.
 	    Input input4 = new Input(null,0);
 	    dcp_1_test(input3,false,4);
-	}
+    }
 }
 
