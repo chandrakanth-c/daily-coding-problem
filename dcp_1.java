@@ -13,12 +13,16 @@ public class Main
             this.k = k;
         }
     }
-    
+
+	// TC : 2O(n) ~ O(n).
+	// SC : O(n) because assitional set is used.
     private static boolean dcp_1(List<Integer> input,int k){
         //Edge case.
         if(input==null) return false;
         //Because Set.contains is O(1).
+		//TC : O(n).
         Set<Integer> inputSet=input.stream().map(i->i).collect(Collectors.toSet());
+		//TC : O(n).
         for(Integer i:input){
             //Return true if complement exist in the input.
             if(inputSet.contains(Math.abs(i-k))) return true;
