@@ -12,18 +12,23 @@ import java.util.stream.*;
 
 public class Main
 {
+    // TC: 2*O(n) ~ O(n)
+    // SC : O(n)
     private static int[] dcp_2(int[] input){
         //Edge case.
-        if(input==null) result new int[]{};
+        if(input==null) return new int[]{};
+	// SC : O(n)
         int[] result=new int[input.length];
         Arrays.fill(result,1);
         //Calculating left Product of self.
         int temp=1;
+	// TC: O(n)
         for(int i=1;i<input.length;i++){
             temp*=input[i-1];
             result[i]=temp;
         }
         temp=1;
+	// TC: O(n)
         //Calculating right Product of self.
         for(int i=input.length-2;i>=0;i--){
             temp*=input[i+1];
@@ -37,11 +42,13 @@ public class Main
         else System.out.printf("Test case %s failed :(%n", testCase);
     }
     
-	public static void main(String[] args) {
-	    //Test case 1 
-	    dcp_2_test(new int[]{1,2,3,4,5},new int[]{120,60,40,30,24},1);
-	    //Test case 2
-	    dcp_2_test(new int[]{},new int[]{},2);
-	}
+    public static void main(String[] args) {
+	//Test case 1 
+	dcp_2_test(new int[]{1,2,3,4,5},new int[]{120,60,40,30,24},1);
+	//Test case 2
+	dcp_2_test(new int[]{},new int[]{},2);
+	//Test case 3
+	dcp_2_test(null,new int[]{},3);
+    }
 }
 
