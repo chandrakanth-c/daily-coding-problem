@@ -76,8 +76,7 @@ public class Main
         return true;
     }
     
-    private static void 
-      dcp_3_serialize_test(Node input,String expectedoutput,int testCase){
+    private static void dcp_3_serialize_test(Node input,String expectedoutput,int testCase){
       if(dcp_3_serialize(input).equals(expectedoutput)) 
         System.out.printf("Test case %s for serialize passsed%n", testCase);
       else
