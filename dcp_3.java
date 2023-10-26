@@ -91,11 +91,11 @@ public class Main
             System.out.printf("Test case %s for deserialize failed%n", testCase);
     }
     
-	public static void main(String[] args) {
-		Node root=new Node(1,new Node(2),null);
-    //Test Case 1 : Serialize
-		dcp_3_serialize_test(root,"1,2,#,#,#",1);
-    //Test Case 1 : Deserialize
-		dcp_3_deserialize_test("1,2,#,#,#",root,1);
-	}
+    public static void main(String[] args) {
+	Node root=new Node(1,new Node(2),null);
+        //Test Case 1 : Serialize
+	dcp_3_serialize_test(root,"1,2,#,#,#",1);
+        //Test Case 1 : Deserialize
+	dcp_3_deserialize_test("1,2,#,#,#",root,1);
+    }
 }
