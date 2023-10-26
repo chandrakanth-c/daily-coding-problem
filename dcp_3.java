@@ -3,7 +3,7 @@
 * which serializes the tree into a string, and deserialize(s), 
 * which deserializes the string back into the tree.
 *
-* Solution source : https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
+* Solution source : {@link https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/}
 */
 import java.util.*;
 import java.lang.*;
