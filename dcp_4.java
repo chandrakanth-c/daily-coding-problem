@@ -54,12 +54,12 @@ public class Main
         else System.out.printf("Test case %s failed%n",testCase);
     }
     
-	public static void main(String[] args) {
-	    // TestCase 1
-		dcp_4_test(new int[]{0, 10, 2, -10, -20},1,1);
-		// TestCase 2
-		dcp_4_test(new int[]{0, 1, 2, -100, -120},3,2);
-		// TestCase 3
-		dcp_4_test(new int[]{0, 1, 2, 3},4,3);
-	}
+    public static void main(String[] args) {
+        // TestCase 1
+        dcp_4_test(new int[]{0, 10, 2, -10, -20},1,1);
+        // TestCase 2
+        dcp_4_test(new int[]{0, 1, 2, -100, -120},3,2);
+	// TestCase 3
+	dcp_4_test(new int[]{0, 1, 2, 3},4,3);
+   }
 }
