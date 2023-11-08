@@ -25,11 +25,11 @@ public class Main
         }
     }
     
-    private static Object car(cons pair){
+    private static <T> T car(cons<T> pair){
         return pair.getFirst();
     }
     
-    private static Object cdr(cons pair){
+    private static <T> T cdr(cons<T> pair){
         return pair.getLast();
     }
 
