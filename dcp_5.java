@@ -33,10 +33,10 @@ public class Main
         return pair.getLast();
     }
 
-	public static void main(String[] args) {
-		//call car - should give us first element
-		System.out.println(car(new cons(1,2)));
-		//call cdr - should give us last element
-		System.out.println(cdr(new cons("a","b")));
-	}
+    public static void main(String[] args) {
+	//call car - should give us first element
+	System.out.println(car(new cons(1,2)));
+	//call cdr - should give us last element
+	System.out.println(cdr(new cons("a","b")));
+   }
 }
