@@ -52,6 +52,7 @@ public class Main
 		//Test Case 1 : expected output is 3
 		System.out.println(
 		    longestIncreasingSubseq(new int[]{3,2,10,11}));
+		//Test Case 1 : expected output is 6
 		System.out.println(
 		    longestIncreasingSubseq(new int[]{0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15}));
 		
