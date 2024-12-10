@@ -12,38 +12,48 @@ the longest increasing subsequence has length 6: it is 0, 2, 6, 9, 11, 15.
 
 *******************************************************************************/
 
-/******************************************************************************
-
->>>> Personal Notes of explaination:
-
-Solution source : https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
-
-This is a DP problem, so please refer to https://github.com/chandrakanth-c/patterns-in-algorithms/blob/main/dynamic-programming.md
-before coming here as this is a `HARD` level problem.
-
->>>> LIS flow example
-
-For idx=1
-    prev=0
-    mx=2
-    res=2 => L(1)=2 where i=1
-For idx=2
-    prev=0
-    prev=1
-    res=2 => L(2)=2 where i=2
-For idx=3
-    prev=0
-    mx=2
-        prev=1
-        prev=0
-        mx=2
-        mx=3
-            prev=2
-            prev=0
-            prev=1
-            mx=3
-            res=3 =>  L(3)=2 where i=3
-
-Return max(L(i))=3 i.e size of [3,10,11] array in [3,10,2,11] input arr.
-
-*******************************************************************************/
+import java.util.*;
+public class Main
+{
+    private static final Map<Integer,Integer> cache;
+    
+    static{
+        cache=new HashMap<>();
+    }
+    
+    private static int longestIncreasingSubseq(int[] arr){
+        if(arr.length==0 || arr.length==1) return arr.length;
+        int greatestOfPrev=Integer.MIN_VALUE;
+        int lisRes=1;
+        
+        if(arr[1]>arr[0]) {
+            lisRes=2;
+            cache.put(1,lisRes);
+            greatestOfPrev=arr[1];
+        }else{
+            cache.put(1,1);
+            greatestOfPrev=arr[0];
+        }
+        
+        for(int i=2;i<arr.length;i++){
+            if(arr[i]>greatestOfPrev){
+                lisRes=cache.get(i-1)+1;
+                cache.put(i,lisRes);
+                greatestOfPrev=arr[i];
+            }else{
+                cache.put(i,lisRes);
+            }
+        }
+        
+        return cache.get(arr.length-1);
+    }
+    
+	public static void main(String[] args) {
+		//Test Case 1 : expected output is 3
+		System.out.println(
+		    longestIncreasingSubseq(new int[]{3,2,10,11}));
+		System.out.println(
+		    longestIncreasingSubseq(new int[]{0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15}));
+		
+	}
+}
