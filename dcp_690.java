@@ -1,36 +1,3 @@
-public class Main
-{
-    static int lisEndingAtIdx(int[] arr, int idx) {
-        if (idx == 0)
-            return 1;
-            
-        int mx = 1;
-        for (int prev = 0; prev < idx; prev++){
-            System.out.println("prev="+prev);
-            if (arr[prev] < arr[idx]){
-                mx = Math.max(mx, lisEndingAtIdx(arr, prev) + 1);   
-                System.out.println("mx="+mx);
-            }
-        }
-        return mx;
-    }
-
-    static int lis(int[] arr) {
-        int n = arr.length;
-        int res = 1;
-        for (int idx = 1; idx < n; idx++) {
-            System.out.println("For idx="+idx);
-            res = Math.max(res, lisEndingAtIdx(arr, idx));
-            System.out.println("res="+res);
-        }
-        return res;
-    }
-    
-	public static void main(String[] args) {
-		lis(new int[]{3,10,2,11});
-	}
-}
-
 /******************************************************************************
 
 >>>> Below paragraphs are sourced from the email from dailycodingproblem.com.
@@ -42,6 +9,10 @@ The subsequence does not necessarily have to be contiguous.
 
 For example, given the array [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15], 
 the longest increasing subsequence has length 6: it is 0, 2, 6, 9, 11, 15.
+
+*******************************************************************************/
+
+/******************************************************************************
 
 >>>> Personal Notes of explaination:
 
