@@ -1,3 +1,36 @@
+public class Main
+{
+    static int lisEndingAtIdx(int[] arr, int idx) {
+        if (idx == 0)
+            return 1;
+            
+        int mx = 1;
+        for (int prev = 0; prev < idx; prev++){
+            System.out.println("prev="+prev);
+            if (arr[prev] < arr[idx]){
+                mx = Math.max(mx, lisEndingAtIdx(arr, prev) + 1);   
+                System.out.println("mx="+mx);
+            }
+        }
+        return mx;
+    }
+
+    static int lis(int[] arr) {
+        int n = arr.length;
+        int res = 1;
+        for (int idx = 1; idx < n; idx++) {
+            System.out.println("For idx="+idx);
+            res = Math.max(res, lisEndingAtIdx(arr, idx));
+            System.out.println("res="+res);
+        }
+        return res;
+    }
+    
+	public static void main(String[] args) {
+		lis(new int[]{3,10,2,11});
+	}
+}
+
 /******************************************************************************
 
 >>>> Below paragraphs are sourced from the email from dailycodingproblem.com.
@@ -43,36 +76,3 @@ For idx=3
 Return max(L(i))=3 i.e size of [3,10,11] array in [3,10,2,11] input arr.
 
 *******************************************************************************/
-
-public class Main
-{
-    static int lisEndingAtIdx(int[] arr, int idx) {
-        if (idx == 0)
-            return 1;
-            
-        int mx = 1;
-        for (int prev = 0; prev < idx; prev++){
-            System.out.println("prev="+prev);
-            if (arr[prev] < arr[idx]){
-                mx = Math.max(mx, lisEndingAtIdx(arr, prev) + 1);   
-                System.out.println("mx="+mx);
-            }
-        }
-        return mx;
-    }
-
-    static int lis(int[] arr) {
-        int n = arr.length;
-        int res = 1;
-        for (int idx = 1; idx < n; idx++) {
-            System.out.println("For idx="+idx);
-            res = Math.max(res, lisEndingAtIdx(arr, idx));
-            System.out.println("res="+res);
-        }
-        return res;
-    }
-    
-	public static void main(String[] args) {
-		lis(new int[]{3,10,2,11});
-	}
-}
