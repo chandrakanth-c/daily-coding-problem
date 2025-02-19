@@ -45,7 +45,7 @@ public class Main
     }
     
 	public static void main(String[] args) {
-	    // input : '111' output :  3
+	    	// input : '111' output :  3
 		System.out.println(decode("111"));
 		// input : '1234' output :  3
 		System.out.println(decode("1234"));
