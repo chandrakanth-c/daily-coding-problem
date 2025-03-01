@@ -25,8 +25,9 @@ public class BinaryTreeTraversal
             this.val=val;
         }
     }
-    
-    static List<Integer> preorderOrInOrderTraversal(Tree root, String flag){
+
+    // Tree traversal with either of three types of binary tree traversal based on the provided flag. 
+    public static List<Integer> treeTraversal(Tree root, String flag){
         List<Integer> res=new ArrayList<>();
         if(root==null) return res;
         if(flag.equals("preorder")){
@@ -40,7 +41,7 @@ public class BinaryTreeTraversal
     }
     
     // Preorder traversal -- (i)
-    static void preorderHelper(Tree root, List<Integer> res){
+    private static void preorderHelper(Tree root, List<Integer> res){
         if(root == null) return;
         
         res.add(root.val);
@@ -49,7 +50,7 @@ public class BinaryTreeTraversal
     }
     
     // Inorder traversal -- (ii)
-    static void inorderHelper(Tree root, List<Integer> res){
+    private static void inorderHelper(Tree root, List<Integer> res){
         if(root == null) return;
         
         if(root.left != null) preorderHelper(root.left, res);
@@ -66,17 +67,17 @@ public class BinaryTreeTraversal
         res.add(root.val);
     }
     
-	public static void main(String[] args) {
+     public static void main(String[] args) {
 		Tree root=new Tree(1);
 		root.left=new Tree(2,new Tree(4),new Tree(5));
 		root.right=new Tree(3);
 		root.right.right=new Tree(5);
 		
 		//Preorder traversal -- (i)
-		System.out.println(preorderOrInOrderTraversal(root,"preorder"));
+		System.out.println(treeTraversal(root,"preorder"));
 		//Inorder traversal -- (ii)
-		System.out.println(preorderOrInOrderTraversal(root,"inorder"));
+		System.out.println(treeTraversal(root,"inorder"));
 		//Postorder traversal -- (iii)
-		System.out.println(preorderOrInOrderTraversal(root,"postorder"));
-	}
+		System.out.println(treeTraversal(root,"postorder"));
+     }
 }
